@@ -6,7 +6,7 @@ editprofile_user_flow = "b2c_1_profileediting1"
 resetpassword_user_flow = "b2c_1_passwordreset1"
 authority_template = "https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/{user_flow}"
 
-CLIENT_SECRET = "Enter_the_Client_Secret_Here" # Our Quickstart uses this placeholder
+CLIENT_SECRET = "nix-Bhft8-Z4ZBmZe1jxJ~_7YS7x3Tb.6x" # Our Quickstart uses this placeholder
 # In your production app, we recommend you to use other ways to store your secret,
 # such as KeyVault, or environment variable as described in Flask's documentation here
 # https://flask.palletsprojects.com/en/1.1.x/config/#configuring-from-environment-variables
@@ -21,7 +21,7 @@ B2C_PROFILE_AUTHORITY = authority_template.format(
 B2C_RESET_PASSWORD_AUTHORITY = authority_template.format(
     tenant=b2c_tenant, user_flow=resetpassword_user_flow)
 
-CLIENT_ID = "Enter_the_Application_Id_here"
+CLIENT_ID = "5129846e-d952-4952-90ef-31ee6921cc35"
 
 REDIRECT_PATH = "/getAToken"  # It will be used to form an absolute URL
     # And that absolute URL must match your app's redirect_uri set in AAD

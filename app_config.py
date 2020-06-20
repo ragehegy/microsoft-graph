@@ -1,6 +1,6 @@
 import os
 
-CLIENT_SECRET = "#" # Our Quickstart uses this placeholder
+CLIENT_SECRET = "nix-Bhft8-Z4ZBmZe1jxJ~_7YS7x3Tb.6x" # Our Quickstart uses this placeholder
 # In your production app, we recommend you to use other ways to store your secret,
 # such as KeyVault, or environment variable as described in Flask's documentation here
 # https://flask.palletsprojects.com/en/1.1.x/config/#configuring-from-environment-variables
@@ -11,7 +11,7 @@ CLIENT_SECRET = "#" # Our Quickstart uses this placeholder
 AUTHORITY = "https://login.microsoftonline.com/e18041a5-61e1-4113-8ea3-30926b337149"  # For multi-tenant app
 # AUTHORITY = "https://login.microsoftonline.com/Enter_the_Tenant_Name_Here"
 
-CLIENT_ID = "#"
+CLIENT_ID = "5129846e-d952-4952-90ef-31ee6921cc35"
 
 REDIRECT_PATH = "/getAToken"  # It will be used to form an absolute URL
     # And that absolute URL must match your app's redirect_uri set in AAD

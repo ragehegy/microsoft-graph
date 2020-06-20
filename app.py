@@ -10,18 +10,18 @@ app = Flask(__name__)
 app.config.from_object(app_config)
 Session(app)
 
+# This section is needed for url_for("foo", _external=True) to automatically
+# generate http scheme when this sample is running on localhost,
+# and to generate https scheme when it is deployed behind reversed proxy.
+# See also https://flask.palletsprojects.com/en/1.0.x/deploying/wsgi-standalone/#proxy-setups
+from werkzeug.middleware.proxy_fix import ProxyFix
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
 @app.route("/")
 def index():
     if not session.get("user"):
         return redirect(url_for("login"))
     return render_template('index.html', user=session["user"], version=msal.__version__)
-
-# @app.route("/getAToken")
-# def getAToken():
-#     if not session.get("user"):
-#         return redirect(url_for("login"))
-#     return render_template('getAToken.html')
 
 @app.route("/login")
 def login():
@@ -102,4 +102,3 @@ app.jinja_env.globals.update(_build_auth_url=_build_auth_url)  # Used in templat
 
 if __name__ == "__main__":
     app.run()
-
