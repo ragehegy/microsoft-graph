@@ -27,7 +27,7 @@ REDIRECT_PATH = "/getAToken"  # It will be used to form an absolute URL
     # And that absolute URL must match your app's redirect_uri set in AAD
 
 # This is the resource that you are going to access in your B2C tenant
-ENDPOINT = ''
+ENDPOINT = 'https://graph.microsoft.com/v1.0/users'
 
 # These are the scopes that you defined for the web API
 SCOPE = ["demo.read", "demo.write"]
