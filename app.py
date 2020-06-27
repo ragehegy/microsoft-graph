@@ -65,7 +65,6 @@ def graphcall():
         app_config.ENDPOINT,
         headers={'Authorization': 'Bearer ' + token['access_token']},
         ).json()
-    print(graph)
     return render_template('display.html', result=graph_data)
 
 
