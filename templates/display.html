@@ -6,6 +6,8 @@
 <body>
     <a href="javascript:window.history.go(-1)">Back</a> <!-- Displayed on top of a potentially large JSON response, so it will remain visible -->
     <h1>Graph API Call Result</h1>
-    <pre>{{ result |tojson(indent=4) }}</pre> <!-- Just a generic json viewer -->
+    {% for table in tables %}
+            {{ table|safe }}
+    {% endfor %}
 </body>
 </html>

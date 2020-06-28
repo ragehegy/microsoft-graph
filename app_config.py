@@ -26,3 +26,4 @@ SCOPE = ["User.ReadBasic.All"]
 
 SESSION_TYPE = "filesystem"  # So token cache will be stored in server-side session
 
+JSON_AS_ASCII = False

@@ -4,7 +4,8 @@ from flask import Flask, render_template, session, request, redirect, url_for
 from flask_session import Session  # https://pythonhosted.org/Flask-Session
 import msal
 import app_config
-
+import pandas as pd
+import json
 
 app = Flask(__name__)
 app.config.from_object(app_config)
@@ -65,7 +66,12 @@ def graphcall():
         app_config.ENDPOINT,
         headers={'Authorization': 'Bearer ' + token['access_token']},
         ).json()
-    return render_template('display.html', result=graph_data)
+    data = graph_data['value']
+    # json_data = json.dumps(data)
+    # df = pd.read_json(json_data)
+    df = pd.DataFrame(data)
+    # print(data)
+    return render_template('display.html',  tables=[df.to_html(classes='data', header="true")])
 
 
 def _load_cache():
