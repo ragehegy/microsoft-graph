@@ -8,7 +8,7 @@ cffi==1.14.0
 chardet==3.0.4
 Click==7.0
 colorama==0.4.1
-cryptography==2.9.2
+cryptography==39.0.1
 cycler==0.10.0
 dominate==2.4.0
 Flask==1.1.2
